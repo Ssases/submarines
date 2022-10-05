@@ -2,7 +2,7 @@
 
 on:
   schedule:
-  - cron:  "*/15 * * * *"
+  - cron:  "*/1 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     - name: repo-sync
       uses: repo-sync/github-sync@v2
       with:
-        source_repo: ""
+        source_repo: "https://github.com/Ssases/submarines.git"
         source_branch: ""
-        destination_branch: ""
+        destination_branch: "https://github.com/Ssases/surface.git"
         github_token: ${{ secrets.PAT }}
