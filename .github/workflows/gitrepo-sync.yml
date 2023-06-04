@@ -1,21 +1,18 @@
-# File: .github/workflows/repo-sync.yml
+name: Greeting on variable day
 
 on:
-  schedule:
-  - cron:  "*/1 * * * *"
-  workflow_dispatch:
+  workflow_dispatch
+
+env:
+  DAY_OF_WEEK: Monday
 
 jobs:
-  repo-sync:
+  greeting_job:
     runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
     steps:
-    - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-    - name: repo-sync
-      uses: repo-sync/github-sync@v2
-      with:
-        source_repo: "https://github.com/Ssases/submarines.git"
-        source_branch: ""
-        destination_branch: "https://github.com/Ssases/surface.git"
-        github_token: ${{ secrets.PAT }}
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
