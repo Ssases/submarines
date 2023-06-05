@@ -40,3 +40,13 @@ jobs:
         env:
           First_Name: Roopa
           day_of_week: monday
+
+  greeting_job4:
+      runs-on: ubuntu-latest
+      env:
+        Greeting: Hello
+        #day_of_week: monday
+      steps:
+        - name: "Say Hello Mona it's Monday"
+          run: |
+            echo "${{secrets.DEV_NAME}}, ${{var.CHILD_NAME}},${{secrets.UAT_KEY}},${{secrets.DEV_NAME}}"
