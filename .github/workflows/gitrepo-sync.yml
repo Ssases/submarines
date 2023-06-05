@@ -49,4 +49,4 @@ jobs:
       steps:
         - name: "Say Hello Mona it's Monday"
           run: |
-            echo "${{secrets.DEV_NAME}}, ${{var.CHILD_NAME}},${{secrets.UAT_KEY}},${{secrets.DEV_NAME}}"
+            echo "${{secrets.DEV_NAME}}, ${{vars.CHILD_NAME}},${{secrets.UAT_KEY}},${{secrets.DEV_NAME}}"
