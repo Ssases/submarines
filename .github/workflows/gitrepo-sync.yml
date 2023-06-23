@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: "Say Hello Mona it's Monday"
         run: |
-         echo "$Greeting $First_Name ${BRANCH_NAME}. Today is $day_of_week!"
+         echo "$Greeting $First_Name $GITHUB_REF_NAME. Today is $day_of_week!"
         env:
           First_Name: Mona
   
