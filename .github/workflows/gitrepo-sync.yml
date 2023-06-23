@@ -5,6 +5,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  BRANCH_NAME: ${{github.ref_name}}
 
 jobs:
   greeting_job1:
@@ -14,7 +15,8 @@ jobs:
       day_of_week: monday
     steps:
       - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is $day_of_week!"
+        run: |
+         echo "$Greeting $First_Name $BRANCH_NAME. Today is $day_of_week!"
         env:
           First_Name: Mona
   
